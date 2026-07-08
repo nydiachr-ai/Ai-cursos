@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cursos de IA para Ejecutivos Senior — Lumia Data Consulting</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+:root {
+  --midnight:       #1A2238;
+  --midnight-deep:  #121828;
+  --midnight-mid:   #1F2B44;
+  --midnight-lift:  #2A3659;
+  --champagne:      #DBA39A;
+  --champagne-pale: #EDD0CB;
+  --champagne-dim:  rgba(219,163,154,0.12);
+  --champagne-glow: rgba(219,163,154,0.06);
+  --pearl:          #F9F7F7;
+  --pearl-dim:      rgba(249,247,247,0.55);
+  --pearl-ghost:    rgba(249,247,247,0.08);
+  --sage:           #7BADA0;
+  --sage-dim:       rgba(123,173,160,0.12);
+  --border:         rgba(219,163,154,0.18);
+  --border-pearl:   rgba(249,247,247,0.07);
+  --radius:         6px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--midnight-deep);
+  color: var(--pearl);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+
+/* ── UTILITIES ───────────────────────────────── */
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--champagne);
+  font-weight: 500;
+  opacity: 0.85;
+  display: block;
+}
+.wrap        { max-width: 1140px; margin: 0 auto; padding: 0 40px; }
+.wrap-narrow { max-width: 800px;  margin: 0 auto; padding: 0 40px; }
+hr.rule {
+  border: none; height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--champagne) 30%, var(--champagne) 70%, transparent 100%);
+  opacity: 0.22; margin: 0;
+}
+
+/* ── NAV ─────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(18,24,40,0.92);
+  border-bottom: 1px solid var(--border-pearl);
+}
+.nav-wrap {
+  max-width: 1140px; margin: 0 auto; padding: 0 40px;
+  height: 68px;
+  display: flex; align-items: center; justify-content: space-between; gap: 32px;
+}
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 500; color: var(--pearl);
+}
+.logo span { color: var(--champagne); }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 13px; color: var(--pearl-dim);
+  letter-spacing: 0.03em; transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--pearl); }
+.nav-cta {
+  background: var(--champagne); color: var(--midnight-deep) !important;
+  font-weight: 500; font-size: 13px;
+  padding: 10px 24px; border-radius: var(--radius);
+  letter-spacing: 0.04em;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.nav-cta:hover { background: var(--champagne-pale); box-shadow: 0 4px 20px rgba(219,163,154,0.3); }
+
+/* ── HERO ────────────────────────────────────── */
+.hero {
+  min-height: 92vh;
+  display: flex; align-items: center;
+  padding: 140px 0 100px;
+  position: relative; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 55% at 85% 25%, rgba(219,163,154,0.09) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 50% at 8%  75%, rgba(123,173,160,0.06) 0%, transparent 55%),
+    linear-gradient(155deg, #121828 0%, #1A2238 55%, #1E2C48 100%);
+}
+.hero-bg::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--border-pearl) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-pearl) 1px, transparent 1px);
+  background-size: 90px 90px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+}
+.hero-content { position: relative; z-index: 2; max-width: 780px; }
+.hero-eyebrow-row {
+  display: flex; align-items: center; gap: 16px; margin-bottom: 40px;
+}
+.hero-line { width: 48px; height: 1px; background: var(--champagne); opacity: 0.5; }
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(50px, 6vw, 82px);
+  font-weight: 300; line-height: 1.03;
+  letter-spacing: -0.02em; color: var(--pearl);
+  margin-bottom: 32px;
+}
+.hero-title em { font-style: italic; color: var(--champagne); font-weight: 400; }
+
+.hero-hook {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 300; font-style: italic;
+  color: rgba(249,247,247,0.6);
+  line-height: 1.5; margin-bottom: 52px;
+  border-left: 2px solid var(--champagne);
+  padding-left: 24px;
+}
+.hero-hook strong { color: var(--pearl); font-style: normal; font-weight: 400; }
+
+.hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--champagne); color: var(--midnight-deep);
+  font-size: 14px; font-weight: 500;
+  padding: 15px 36px; border-radius: var(--radius);
+  letter-spacing: 0.04em;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+  display: inline-block;
+}
+.btn-primary:hover {
+  background: var(--champagne-pale); transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(219,163,154,0.28);
+}
+.btn-ghost {
+  font-size: 14px; color: var(--pearl-dim);
+  border-bottom: 1px solid rgba(249,247,247,0.18);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.btn-ghost:hover { color: var(--pearl); border-color: var(--champagne); }
+
+/* ── PROMISE STRIP ───────────────────────────── */
+.promise-strip {
+  background: var(--midnight-mid);
+  border-top: 1px solid var(--border-pearl);
+  border-bottom: 1px solid var(--border-pearl);
+  padding: 56px 0;
+}
+.promise-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+}
+.promise-item {
+  padding: 0 32px;
+  border-right: 1px solid var(--border-pearl);
+  display: flex; flex-direction: column; gap: 10px;
+}
+.promise-item:first-child { padding-left: 0; }
+.promise-item:last-child  { border-right: none; }
+.promise-icon { font-size: 22px; }
+.promise-text {
+  font-size: 14px; color: var(--pearl-dim);
+  line-height: 1.6; font-weight: 300;
+}
+.promise-text strong { color: var(--pearl); font-weight: 500; display: block; margin-bottom: 2px; }
+
+/* ── ABOUT SECTION ───────────────────────────── */
+.about-section { padding: 120px 0; }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+}
+.about-left {}
+.about-left h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 3.8vw, 52px);
+  font-weight: 400; color: var(--pearl);
+  line-height: 1.1; margin-top: 14px; margin-bottom: 28px;
+}
+.about-left h2 em { font-style: italic; color: var(--champagne); }
+.about-left p {
+  font-size: 16px; color: var(--pearl-dim);
+  line-height: 1.85; margin-bottom: 20px; font-weight: 300;
+}
+.about-left p:last-child { margin-bottom: 0; }
+.about-right {}
+.quote-card {
+  background: linear-gradient(135deg, var(--midnight-mid), var(--midnight-lift));
+  border: 1px solid var(--border);
+  border-radius: 10px; padding: 48px 44px;
+  position: relative; overflow: hidden;
+}
+.quote-card::before {
+  content: '"';
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 160px; line-height: 1;
+  color: var(--champagne); opacity: 0.08;
+  position: absolute; top: -20px; left: 20px;
+  font-weight: 400;
+}
+.quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 400; font-style: italic;
+  color: var(--pearl); line-height: 1.55;
+  position: relative; z-index: 1;
+  margin-bottom: 28px;
+}
+.quote-text em { color: var(--champagne); font-style: normal; }
+.quote-divider { height: 1px; background: var(--border); margin-bottom: 20px; }
+.quote-result {
+  font-size: 14px; color: var(--pearl-dim);
+  line-height: 1.65; font-weight: 300;
+}
+.quote-result strong { color: var(--champagne); font-weight: 500; }
+
+/* ── COURSES ─────────────────────────────────── */
+.courses-section { padding: 0 0 120px; }
+.courses-header { margin-bottom: 64px; }
+.courses-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 3.8vw, 52px);
+  font-weight: 400; color: var(--pearl);
+  line-height: 1.1; margin-top: 14px;
+}
+.courses-header h2 em { font-style: italic; color: var(--champagne); }
+.courses-header p {
+  font-size: 17px; color: var(--pearl-dim);
+  margin-top: 16px; font-weight: 300; line-height: 1.75; max-width: 580px;
+}
+
+/* Tabs */
+.course-tabs {
+  display: flex; gap: 0;
+  border-bottom: 1px solid var(--border-pearl);
+  margin-bottom: 48px;
+}
+.course-tab {
+  font-size: 14px; color: var(--pearl-dim);
+  padding: 14px 28px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer; transition: color 0.2s, border-color 0.2s;
+  letter-spacing: 0.03em; user-select: none;
+  margin-bottom: -1px;
+}
+.course-tab:hover { color: var(--pearl); }
+.course-tab.active { color: var(--champagne); border-bottom-color: var(--champagne); }
+
+/* Course panels */
+.course-panel { display: none; }
+.course-panel.active { display: block; }
+
+.course-detail-grid {
+  display: grid; grid-template-columns: 1fr 380px;
+  gap: 0;
+  background: linear-gradient(135deg, var(--midnight-mid), var(--midnight-lift));
+  border: 1px solid var(--border);
+  border-radius: 12px; overflow: hidden;
+}
+.course-detail-main { padding: 56px 56px; }
+.course-live-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--champagne); margin-bottom: 24px;
+}
+.live-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--champagne);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:.4; transform:scale(.8); }
+}
+.course-detail-main h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 400; color: var(--pearl);
+  line-height: 1.15; margin-bottom: 8px;
+}
+.course-detail-main h3 em { font-style: italic; color: var(--champagne); }
+.course-detail-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-style: italic; font-weight: 300;
+  color: var(--pearl-dim); margin-bottom: 32px;
+}
+.course-detail-main > p {
+  font-size: 15px; color: var(--pearl-dim);
+  line-height: 1.85; font-weight: 300; margin-bottom: 36px;
+}
+.course-learns {
+  margin-bottom: 40px;
+}
+.course-learns-label {
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--champagne); opacity: 0.7;
+  display: block; margin-bottom: 16px;
+}
+.course-learns ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.course-learns ul li {
+  font-size: 14px; color: var(--pearl-dim);
+  display: flex; gap: 12px; align-items: flex-start; line-height: 1.6;
+}
+.course-learns ul li::before {
+  content: '→'; color: var(--champagne); font-size: 13px;
+  flex-shrink: 0; margin-top: 2px;
+}
+.course-pills {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px;
+}
+.pill {
+  font-size: 12px; padding: 6px 14px; border-radius: 999px;
+  display: flex; align-items: center; gap: 6px;
+}
+.pill-champ { background: var(--champagne-dim); color: var(--champagne); border: 1px solid var(--border); }
+.pill-sage  { background: var(--sage-dim); color: var(--sage); border: 1px solid rgba(123,173,160,0.2); }
+.course-cta { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+
+/* Course sidebar */
+.course-detail-side {
+  background: rgba(0,0,0,0.2);
+  border-left: 1px solid var(--border-pearl);
+  padding: 56px 40px;
+  display: flex; flex-direction: column; gap: 0;
+}
+.side-item { padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px solid var(--border-pearl); }
+.side-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.side-label {
+  font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--champagne); opacity: 0.65; display: block; margin-bottom: 6px;
+}
+.side-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; color: var(--pearl); display: block; line-height: 1.2;
+}
+.side-sub { font-size: 12px; color: var(--pearl-dim); margin-top: 3px; display: block; }
+
+.side-includes { margin-top: auto; }
+.side-includes-label {
+  font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--pearl-dim); opacity: 0.45;
+  display: block; margin-bottom: 12px;
+}
+.side-includes ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.side-includes ul li {
+  font-size: 13px; color: var(--pearl-dim);
+  display: flex; gap: 10px; align-items: flex-start;
+}
+.side-includes ul li::before {
+  content: '✓'; color: var(--champagne); font-size: 11px;
+  flex-shrink: 0; margin-top: 2px;
+}
+
+/* ── FORMATS ─────────────────────────────────── */
+.formats-section {
+  background: var(--midnight-mid);
+  border-top: 1px solid var(--border-pearl);
+  border-bottom: 1px solid var(--border-pearl);
+  padding: 120px 0;
+}
+.formats-header { margin-bottom: 64px; }
+.formats-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 3.8vw, 52px);
+  font-weight: 400; color: var(--pearl);
+  line-height: 1.1; margin-top: 14px;
+}
+.formats-header h2 em { font-style: italic; color: var(--champagne); }
+.formats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.format-card {
+  border: 1px solid var(--border-pearl);
+  border-radius: 10px; padding: 40px 36px;
+  background: rgba(255,255,255,0.02);
+  transition: border-color 0.2s, background 0.2s;
+}
+.format-card:hover { border-color: var(--border); background: var(--champagne-glow); }
+.format-card.featured {
+  border-color: var(--border);
+  background: linear-gradient(135deg, rgba(219,163,154,0.08), rgba(219,163,154,0.03));
+}
+.format-icon { font-size: 28px; margin-bottom: 20px; display: block; }
+.format-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 500; color: var(--pearl);
+  margin-bottom: 10px; line-height: 1.2;
+}
+.format-card p { font-size: 14px; color: var(--pearl-dim); line-height: 1.75; }
+.format-detail {
+  margin-top: 24px; padding-top: 20px;
+  border-top: 1px solid var(--border-pearl);
+  display: flex; flex-direction: column; gap: 8px;
+}
+.format-detail span {
+  font-size: 12px; color: var(--pearl-dim);
+  display: flex; gap: 8px; align-items: center;
+}
+.format-detail span::before { content: '·'; color: var(--champagne); }
+
+/* ── TOOLS SECTION ───────────────────────────── */
+.tools-section { padding: 120px 0; }
+.tools-header { margin-bottom: 64px; }
+.tools-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 3.8vw, 52px);
+  font-weight: 400; color: var(--pearl);
+  line-height: 1.1; margin-top: 14px;
+}
+.tools-header h2 em { font-style: italic; color: var(--champagne); }
+.tools-header p { font-size: 17px; color: var(--pearl-dim); margin-top: 16px; font-weight: 300; line-height: 1.75; }
+.tools-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.tool-card {
+  border: 1px solid var(--border-pearl);
+  border-radius: 10px; padding: 36px 28px;
+  background: rgba(255,255,255,0.02);
+  transition: border-color 0.2s, background 0.2s;
+  text-align: center;
+}
+.tool-card:hover { border-color: var(--border); background: var(--champagne-dim); }
+.tool-emoji { font-size: 32px; margin-bottom: 14px; display: block; }
+.tool-card h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; color: var(--pearl); margin-bottom: 8px;
+}
+.tool-card p { font-size: 13px; color: var(--pearl-dim); line-height: 1.65; }
+.tool-free {
+  display: inline-block; margin-top: 14px;
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--sage); background: var(--sage-dim);
+  padding: 3px 10px; border-radius: 999px;
+  border: 1px solid rgba(123,173,160,0.2);
+}
+
+/* ── FOR WHOM ────────────────────────────────── */
+.forwhom-section {
+  background: linear-gradient(135deg, var(--midnight-mid), var(--midnight));
+  border-top: 1px solid var(--border-pearl);
+  border-bottom: 1px solid var(--border-pearl);
+  padding: 120px 0;
+}
+.forwhom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.forwhom-left h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 3.8vw, 52px);
+  font-weight: 400; color: var(--pearl);
+  line-height: 1.1; margin-top: 14px; margin-bottom: 24px;
+}
+.forwhom-left h2 em { font-style: italic; color: var(--champagne); }
+.forwhom-left p { font-size: 16px; color: var(--pearl-dim); line-height: 1.8; font-weight: 300; }
+.forwhom-right { display: flex; flex-direction: column; gap: 0; }
+.forwhom-item {
+  display: flex; gap: 18px; align-items: flex-start;
+  padding: 24px 0; border-bottom: 1px solid var(--border-pearl);
+}
+.forwhom-item:last-child { border-bottom: none; }
+.forwhom-check {
+  width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0;
+  background: var(--champagne-dim); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; color: var(--champagne); margin-top: 2px;
+}
+.forwhom-text h4 {
+  font-size: 16px; font-weight: 500; color: var(--pearl);
+  margin-bottom: 4px; line-height: 1.3;
+}
+.forwhom-text p { font-size: 13px; color: var(--pearl-dim); line-height: 1.6; font-weight: 300; }
+
+/* ── CTA ─────────────────────────────────────── */
+.cta-section { padding: 120px 0; text-align: center; position: relative; overflow: hidden; }
+.cta-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 55% 70% at 50% 50%, rgba(219,163,154,0.07) 0%, transparent 65%);
+}
+.cta-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4.5vw, 60px);
+  font-weight: 400; color: var(--pearl);
+  line-height: 1.1; margin-bottom: 20px;
+  position: relative; z-index: 1;
+}
+.cta-section h2 em { font-style: italic; color: var(--champagne); }
+.cta-section > .wrap-narrow > p {
+  font-size: 18px; color: var(--pearl-dim);
+  margin-bottom: 52px; line-height: 1.75; font-weight: 300;
+  position: relative; z-index: 1;
+}
+.contact-row {
+  display: flex; justify-content: center; gap: 16px;
+  flex-wrap: wrap; position: relative; z-index: 1;
+}
+.contact-btn {
+  display: flex; align-items: center; gap: 14px;
+  border: 1px solid var(--border); border-radius: 8px;
+  padding: 18px 28px; background: rgba(255,255,255,0.03);
+  min-width: 280px;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+}
+.contact-btn:hover {
+  border-color: var(--champagne); background: var(--champagne-dim);
+  transform: translateY(-2px);
+}
+.contact-btn-icon {
+  width: 42px; height: 42px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.icon-wa   { background: rgba(37,211,102,0.12); }
+.icon-mail { background: var(--champagne-dim); }
+.contact-btn-body { text-align: left; }
+.contact-btn-label {
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--champagne); opacity: 0.7;
+  display: block; margin-bottom: 3px;
+}
+.contact-btn-value { font-size: 15px; color: var(--pearl); font-weight: 500; display: block; }
+.contact-btn-sub   { font-size: 12px; color: var(--pearl-dim); display: block; margin-top: 1px; }
+
+/* ── FOOTER ──────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border-pearl);
+  padding: 36px 40px;
+  max-width: 1140px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+}
+.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--pearl); opacity: 0.45; }
+.footer-logo span { color: var(--champagne); }
+.footer-links { display: flex; gap: 28px; list-style: none; flex-wrap: wrap; }
+.footer-links a { font-size: 12px; color: var(--pearl-dim); opacity: 0.45; transition: opacity 0.2s; }
+.footer-links a:hover { opacity: 1; }
+.footer-copy { font-size: 12px; color: var(--pearl-dim); opacity: 0.3; width: 100%; letter-spacing: 0.04em; }
+
+
+/* ── COURSE DAY BLOCKS ──────────────────────── */
+.course-day-block {
+  margin-bottom: 32px;
+  border: 1px solid var(--border-pearl);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.course-day-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 24px;
+  background: rgba(219,163,154,0.08);
+  border-bottom: 1px solid var(--border-pearl);
+}
+.course-day-num {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px; font-weight: 500; color: var(--champagne);
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.course-day-icon { font-size: 20px; }
+.course-day-modules { display: flex; flex-direction: column; gap: 0; }
+.course-day-module {
+  padding: 24px 24px;
+  border-bottom: 1px solid var(--border-pearl);
+}
+.course-day-module:last-child { border-bottom: none; }
+.course-day-module-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px; font-weight: 500; color: var(--pearl);
+  margin-bottom: 6px; line-height: 1.3;
+}
+.course-day-module-desc {
+  font-size: 13px; color: var(--pearl-dim);
+  line-height: 1.65; margin-bottom: 10px;
+}
+.course-day-tools { display: flex; gap: 8px; flex-wrap: wrap; }
+.tool-tag {
+  font-size: 11px; padding: 3px 12px; border-radius: 999px;
+  background: var(--champagne-dim); color: var(--champagne);
+  border: 1px solid var(--border); letter-spacing: 0.04em;
+}
+
+/* ── HERRAMIENTAS GRID ──────────────────────── */
+.herramientas-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 16px; margin-top: 36px;
+}
+.herramienta-card {
+  border: 1px solid var(--border-pearl);
+  border-radius: 10px; padding: 28px 24px;
+  background: rgba(255,255,255,0.02);
+  transition: border-color 0.2s, background 0.2s;
+}
+.herramienta-card:hover { border-color: var(--border); background: var(--champagne-glow); }
+.herramienta-icon { font-size: 28px; display: block; margin-bottom: 12px; }
+.herramienta-card h4 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px; color: var(--pearl); margin-bottom: 8px;
+}
+.herramienta-card p { font-size: 13px; color: var(--pearl-dim); line-height: 1.65; }
+
+/* ── RESPONSIVE ──────────────────────────────── */
+@media (max-width: 960px) {
+  .promise-grid  { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .promise-item  { border-right: none; padding: 0; }
+  .about-grid    { grid-template-columns: 1fr; }
+  .course-detail-grid { grid-template-columns: 1fr; }
+  .course-detail-side { border-left: none; border-top: 1px solid var(--border-pearl); }
+  .formats-grid  { grid-template-columns: 1fr; }
+  .tools-grid    { grid-template-columns: repeat(2, 1fr); }
+  .forwhom-grid  { grid-template-columns: 1fr; gap: 48px; }
+  .contact-row   { flex-direction: column; align-items: stretch; }
+  .contact-btn   { min-width: unset; }
+}
+@media (max-width: 640px) {
+  .wrap, .wrap-narrow { padding: 0 20px; }
+  .nav-wrap { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hero-title { font-size: 44px; }
+  .tools-grid { grid-template-columns: 1fr; }
+  footer { padding: 32px 20px; flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ───────────────────────────────────────────── -->
+<nav>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">Lumia<span>Data</span><span style="color:var(--champagne);font-size:26px;line-height:0;margin-bottom:-4px;">.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="#cursos" class="active">Cursos</a></li>
+      <li><a href="#formatos">Formatos</a></li>
+      <li><a href="#para-ti">¿Es para ti?</a></li>
+      <li><a href="#contacto" class="nav-cta">Quiero empezar</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ──────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="hero-content">
+      <div class="hero-eyebrow-row">
+        <div class="hero-line"></div>
+        <span class="eyebrow">Cursos de IA para Ejecutivos Senior</span>
+        <div class="hero-line"></div>
+      </div>
+      <h1 class="hero-title">
+        ¿Sientes que la IA<br>avanza más rápido<br><em>que tú?</em>
+      </h1>
+      <p class="hero-hook">
+        <strong>Este taller es para ti.</strong><br>
+        Sesiones privadas o en grupos pequeños de pares, impartidas por un instructor de tu mismo nivel de seniority. Sin juicios, sin sentirte perdido.
+      </p>
+      <div class="hero-actions">
+        <a href="#cursos" class="btn-primary">Ver cursos disponibles →</a>
+        <a href="#contacto" class="btn-ghost">Hablar con un asesor</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROMISE STRIP ──────────────────────────────────── -->
+<div class="promise-strip">
+  <div class="wrap">
+    <div class="promise-grid">
+      <div class="promise-item">
+        <div class="promise-icon">🤝</div>
+        <div class="promise-text">
+          <strong>Instructor de tu nivel</strong>
+          Aprende de alguien que entiende tu mundo, tus decisiones y tu contexto.
+        </div>
+      </div>
+      <div class="promise-item">
+        <div class="promise-icon">🔒</div>
+        <div class="promise-text">
+          <strong>Ambiente confidencial</strong>
+          Grupos cerrados de pares. Preguntas sin juicio, aprendizaje sin presión.
+        </div>
+      </div>
+      <div class="promise-item">
+        <div class="promise-icon">⚡</div>
+        <div class="promise-text">
+          <strong>Aplicación inmediata</strong>
+          Desde la primera sesión, usarás la herramienta en situaciones reales de tu vida y negocio.
+        </div>
+      </div>
+      <div class="promise-item">
+        <div class="promise-icon">🎯</div>
+        <div class="promise-text">
+          <strong>A tu medida</strong>
+          Cada curso se adapta a tu perfil, industria y objetivos concretos.
+        </div>
+      </div>
+      <div class="promise-item">
+        <div class="promise-icon">✅</div>
+        <div class="promise-text">
+          <strong>Confianza desde el día uno</strong>
+          Sal de la primera sesión ya usando IA — sin depender de nadie para hacerlo.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<!-- ── ABOUT ─────────────────────────────────────────── -->
+<section class="about-section">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-left">
+        <span class="eyebrow">Por qué existe este programa</span>
+        <h2>Domina la IA<br>en tu propio <em>terreno.</em></h2>
+        <p>La inteligencia artificial ya está transformando la forma en que se toman decisiones, se comunican ideas y se gestionan equipos. Y los ejecutivos que la dominan llevan una ventaja real sobre los que no.</p>
+        <p>Pero los cursos convencionales no están diseñados para ti. Son demasiado técnicos, demasiado lentos, o demasiado genéricos. Aquí es diferente.</p>
+        <p>Ayudamos a ejecutivos senior a dominar la IA en sesiones privadas con instructores de su mismo nivel, sin sentirse juzgados ni perdidos. En un par de horas, pasan de evitar el tema a usarla con confianza en su día a día.</p>
+      </div>
+      <div class="about-right">
+        <div class="quote-card">
+          <p class="quote-text">
+            "En dos horas pasé de no saber qué era un prompt a tener borradores de mis correos más difíciles listos antes del desayuno. <em>Nadie me hizo sentir que llegaba tarde a la fiesta.</em>"
+          </p>
+          <div class="quote-divider"></div>
+          <p class="quote-result">
+            El resultado más frecuente de nuestros participantes: <strong>usar IA con confianza desde la primera sesión</strong> — en juntas, correos, presentaciones y decisiones clave.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ── COURSES ────────────────────────────────────────── -->
+<section class="courses-section" id="cursos">
+  <div class="wrap">
+    <div class="courses-header">
+      <span class="eyebrow">Cursos disponibles</span>
+      <h2>Una herramienta.<br>Un curso. <em>Dominio real.</em></h2>
+      <p>¿Ya escuchaste de ChatGPT, Claude o NotebookLM pero no sabes por dónde empezar? Tenemos un curso individual para cada herramienta, adaptado a tu perfil.</p>
+    </div>
+
+    <div class="course-tabs">
+      <div class="course-tab active" onclick="showTab('taller')">🎓 Taller Ejecutivo</div>
+      <div class="course-tab" onclick="showTab('herramientas')">🛠️ Herramientas de IA</div>
+    </div>
+
+    <!-- TALLER EJECUTIVO -->
+    <div class="course-panel active" id="panel-taller">
+      <div class="course-detail-grid">
+        <div class="course-detail-main">
+          <div class="course-live-tag"><div class="live-dot"></div>Próxima fecha · 29 de Julio 2025</div>
+          <h3>La ventaja que<br>pocos tienen:<br><em>El asesor secreto de IA</em></h3>
+          <p class="course-detail-tagline">que nadie sabe que usas.</p>
+          <p>Taller ejecutivo de 2 días diseñado para perfiles directivos y líderes de negocio. Aprenderás a usar las herramientas de IA más efectivas del momento aplicadas a situaciones reales de tu vida y negocio — sin teoría innecesaria, sin tecnicismos y con resultados desde la primera sesión.</p>
+
+          <!-- DIA 1 -->
+          <div class="course-day-block">
+            <div class="course-day-header">
+              <span class="course-day-num">Día 1</span>
+              <span class="course-day-icon">🎙️</span>
+            </div>
+            <div class="course-day-modules">
+              <div class="course-day-module">
+                <div class="course-day-module-title">La IA como tu asesor de confianza</div>
+                <div class="course-day-module-desc">Descarga las aplicaciones, crea tu usuario, qué es la IA, elementos básicos y cómo comunicarte de la mejor manera.</div>
+                <div class="course-day-tools"><span class="tool-tag">✨ Claude</span><span class="tool-tag">💬 ChatGPT</span></div>
+              </div>
+              <div class="course-day-module">
+                <div class="course-day-module-title">Nunca más pierdas lo que se dijo en una junta</div>
+                <div class="course-day-module-desc">Grabación, transcripción y minuta automática con action items. Sin depender de nadie para tener el resumen.</div>
+                <div class="course-day-tools"><span class="tool-tag">🎙️ Fathom</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DIA 2 -->
+          <div class="course-day-block">
+            <div class="course-day-header">
+              <span class="course-day-num">Día 2</span>
+              <span class="course-day-icon">📊</span>
+            </div>
+            <div class="course-day-modules">
+              <div class="course-day-module">
+                <div class="course-day-module-title">Comunica con autoridad</div>
+                <div class="course-day-module-desc">Emails difíciles, cartas formales y comunicados redactados con tu estilo y tu tono. En segundos.</div>
+                <div class="course-day-tools"><span class="tool-tag">✨ Claude</span></div>
+              </div>
+              <div class="course-day-module">
+                <div class="course-day-module-title">Presentaciones que impresionan — sin diseñador</div>
+                <div class="course-day-module-desc">Presentaciones ejecutivas listas para mostrar en menos de 10 minutos. Sin asistente, sin demoras.</div>
+                <div class="course-day-tools"><span class="tool-tag">📊 Gamma</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-cta" style="margin-top:40px;">
+            <a href="#contacto" class="btn-primary">Reservar lugar</a>
+          </div>
+        </div>
+        <div class="course-detail-side">
+          <div class="side-item">
+            <span class="side-label">Duración</span>
+            <span class="side-val">2 días</span>
+            <span class="side-sub">2 hrs por día</span>
+          </div>
+          <div class="side-item">
+            <span class="side-label">Lugar</span>
+            <span class="side-val">CDMX</span>
+            <span class="side-sub">Presencial</span>
+          </div>
+          <div class="side-item">
+            <span class="side-label">Próxima fecha</span>
+            <span class="side-val">29 de Julio y 5 Agosto</span>
+            <span class="side-sub">10:00 am — 12:00 pm</span>
+          </div>
+          <div class="side-item">
+            <span class="side-label">Nivel requerido</span>
+            <span class="side-val">Ninguno</span>
+            <span class="side-sub">Se parte desde cero, sin supuestos</span>
+          </div>
+          <div class="side-includes">
+            <span class="side-includes-label">Incluye</span>
+            <ul>
+              <li>Guía de prompts ejecutivos (PDF)</li>
+              <li>Práctica en vivo con casos reales</li>
+              <li>Seguimiento post-taller por WhatsApp</li>
+              <li>Herramientas 100% gratuitas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERRAMIENTAS IA -->
+    <div class="course-panel" id="panel-herramientas">
+      <div class="course-detail-grid" style="grid-template-columns:1fr;">
+        <div class="course-detail-main" style="padding:56px;">
+          <div class="course-live-tag"><div class="live-dot"></div>Disponibles ahora</div>
+          <h3>Herramientas de <em>Inteligencia Artificial</em></h3>
+          <p class="course-detail-tagline">Un curso por herramienta. Adaptado a tu perfil y tus objetivos.</p>
+          <p>¿Ya escuchaste de ChatGPT, Claude o NotebookLM pero no sabes por dónde empezar? Ofrecemos sesiones individuales especializadas en cada herramienta — privadas o en grupos pequeños de pares, siempre adaptadas a tu industria, tu rol y tus necesidades concretas.</p>
+          <div class="herramientas-grid">
+            <div class="herramienta-card">
+              <span class="herramienta-icon">💬</span>
+              <h4>ChatGPT</h4>
+              <p>El asistente más conocido del mundo. Aprende a redactar, resumir, analizar y comunicar con autoridad desde tu primera sesión.</p>
+            </div>
+            <div class="herramienta-card">
+              <span class="herramienta-icon">✨</span>
+              <h4>Claude</h4>
+              <p>Tu asesor privado para decisiones complejas, documentos legales y comunicación ejecutiva de alto impacto.</p>
+            </div>
+            <div class="herramienta-card">
+              <span class="herramienta-icon">📓</span>
+              <h4>NotebookLM</h4>
+              <p>Convierte tus propios documentos en una base de conocimiento que puedes consultar, resumir y analizar al instante.</p>
+            </div>
+            <div class="herramienta-card">
+              <span class="herramienta-icon">🎙️</span>
+              <h4>Fathom</h4>
+              <p>Graba, transcribe y convierte tus juntas en minutas y action items automáticos. Sin esfuerzo, sin depender de nadie.</p>
+            </div>
+          </div>
+          <div class="course-cta" style="margin-top:44px;">
+            <a href="#contacto" class="btn-primary">Consultar disponibilidad →</a>
+            <a href="#contacto" class="btn-ghost">Hablar con un asesor</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ── FORMATS ────────────────────────────────────────── -->
+<section class="formats-section" id="formatos">
+  <div class="wrap">
+    <div class="formats-header">
+      <span class="eyebrow">Formatos disponibles</span>
+      <h2>Como tú lo necesitas,<br><em>cuando tú lo necesitas.</em></h2>
+    </div>
+    <div class="formats-grid">
+
+      <div class="format-card featured">
+        <span class="format-icon">🧑‍💼</span>
+        <h3>Sesión Privada</h3>
+        <p>Solo tú y el instructor. El ritmo, los ejemplos y los temas son 100% tuyos. La experiencia más personalizada e íntima — ideal para C-level o quienes prefieren total confidencialidad.</p>
+        <div class="format-detail">
+          <span>Sesión individual, 1 a 1</span>
+          <span>Presencial o en línea</span>
+          <span>2 a 4 horas según herramienta</span>
+          <span>Fecha y horario a tu conveniencia</span>
+        </div>
+      </div>
+
+      <div class="format-card">
+        <span class="format-icon">👥</span>
+        <h3>Grupo de Pares</h3>
+        <p>Grupos cerrados de 3 a 8 personas del mismo nivel profesional. Aprendes con colegas que enfrentan retos similares — sin la incomodidad de hacerlo frente a tu equipo.</p>
+        <div class="format-detail">
+          <span>3 a 8 participantes del mismo nivel</span>
+          <span>Presencial o en línea</span>
+          <span>2 a 4 horas según herramienta</span>
+          <span>Ambiente privado y confidencial</span>
+        </div>
+      </div>
+
+      <div class="format-card">
+        <span class="format-icon">🎓</span>
+        <h3>Taller Ejecutivo</h3>
+        <p>Formato intensivo de 4 horas donde en un solo día dominas las herramientas más importantes. Cupos limitados a 12 personas para mantener la calidad y la atención personalizada.</p>
+        <div class="format-detail">
+          <span>Hasta 12 participantes</span>
+          <span>Presencial · CDMX</span>
+          <span>2 días - 2 hrs cada uno</span>
+          <span>Próxima fecha: 29 de Julio</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── TOOLS ──────────────────────────────────────────── -->
+<section class="tools-section">
+  <div class="wrap">
+    <div class="tools-header">
+      <span class="eyebrow">Herramientas que dominarás</span>
+      <h2>Las mejores del mundo.<br><em>Todas gratuitas.</em></h2>
+      <p>No necesitas comprar nada. Solo traer tu laptop o tablet y las ganas de empezar.</p>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <span class="tool-emoji">💬</span>
+        <h4>ChatGPT</h4>
+        <p>El asistente más conocido del mundo. Redacta, resume, analiza y comunica con autoridad.</p>
+        <span class="tool-free">Gratis</span>
+      </div>
+      <div class="tool-card">
+        <span class="tool-emoji">✨</span>
+        <h4>Claude</h4>
+        <p>Tu asesor privado para decisiones complejas, documentos legales y comunicación ejecutiva.</p>
+        <span class="tool-free">Gratis</span>
+      </div>
+      <div class="tool-card">
+        <span class="tool-emoji">📓</span>
+        <h4>NotebookLM</h4>
+        <p>Convierte tus propios documentos en una base de conocimiento que puedes consultar al instante.</p>
+        <span class="tool-free">Gratis</span>
+      </div>
+      <div class="tool-card">
+        <span class="tool-emoji">🎙️</span>
+        <h4>Fathom</h4>
+        <p>Graba y transcribe tus juntas. Genera minutas y action items automáticos en segundos.</p>
+        <span class="tool-free">Gratis</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ── FOR WHOM ────────────────────────────────────────── -->
+<section class="forwhom-section" id="para-ti">
+  <div class="wrap">
+    <div class="forwhom-grid">
+      <div class="forwhom-left">
+        <span class="eyebrow">¿Es para ti?</span>
+        <h2>Diseñado para<br>quienes ya <em>llegaron.</em></h2>
+        <p>No es un curso para jóvenes que quieren aprender tecnología. Es para profesionales con trayectoria que quieren sumar una herramienta poderosa a un arsenal que ya funciona.</p>
+      </div>
+      <div class="forwhom-right">
+        <div class="forwhom-item">
+          <div class="forwhom-check">✓</div>
+          <div class="forwhom-text">
+            <h4>Tu valor está en tu experiencia y criterio</h4>
+            <p>Médico, abogado, director, empresario o consultor — cualquier profesional con trayectoria que quiera trabajar más inteligente.</p>
+          </div>
+        </div>
+        <div class="forwhom-item">
+          <div class="forwhom-check">✓</div>
+          <div class="forwhom-text">
+            <h4>Sabes que la IA existe pero no la usas directamente</h4>
+            <p>La has visto, la has oído, pero nunca la has dominado tú mismo. Aquí cambia eso.</p>
+          </div>
+        </div>
+        <div class="forwhom-item">
+          <div class="forwhom-check">✓</div>
+          <div class="forwhom-text">
+            <h4>Quieres aprender sin sentirte juzgado</h4>
+            <p>En un ambiente de pares, donde todas las preguntas son válidas y nadie te ve raro por empezar desde cero.</p>
+          </div>
+        </div>
+        <div class="forwhom-item">
+          <div class="forwhom-check">✓</div>
+          <div class="forwhom-text">
+            <h4>Quieres resultados desde el primer día</h4>
+            <p>No teoría, no conceptos abstractos. Sales de la primera sesión ya usando la herramienta en algo real.</p>
+          </div>
+        </div>
+        <div class="forwhom-item">
+          <div class="forwhom-check">✓</div>
+          <div class="forwhom-text">
+            <h4>Valoras la discreción y los grupos pequeños</h4>
+            <p>Sin auditorios, sin grabaciones, sin que nadie de tu empresa sepa que estás aprendiendo algo nuevo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────── -->
+<section class="cta-section" id="contacto">
+  <div class="cta-bg"></div>
+  <div class="wrap-narrow">
+    <span class="eyebrow" style="margin-bottom:20px;">Empecemos</span>
+    <h2>Tu primer paso<br>es el más <em>fácil.</em></h2>
+    <p>Escríbenos por WhatsApp o correo. Te respondemos en menos de 24 horas con opciones de fecha, formato y herramienta según lo que necesitas.</p>
+    <div class="contact-row">
+      <a href="https://wa.me/5215579893658" target="_blank" class="contact-btn">
+        <div class="contact-btn-icon icon-wa">💬</div>
+        <div class="contact-btn-body">
+          <span class="contact-btn-label">WhatsApp</span>
+          <span class="contact-btn-value">55 2922 7423</span>
+          <span class="contact-btn-sub">La forma más rápida</span>
+        </div>
+      </a>
+      <a href="mailto:nydia.chavez@lumiadata.consulting" class="contact-btn">
+        <div class="contact-btn-icon icon-mail">✉️</div>
+        <div class="contact-btn-body">
+          <span class="contact-btn-label">Correo</span>
+          <span class="contact-btn-value">contacto</span>
+          <span class="contact-btn-sub">@lumiadata.consulting</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer>
+  <div class="footer-logo">Lumia<span>Data</span> Consulting</div>
+  <ul class="footer-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="#cursos">Cursos</a></li>
+    <li><a href="#formatos">Formatos</a></li>
+
+  </ul>
+  <p class="footer-copy">© 2025 Lumia Data Consulting · nydia.chavez@lumiadata.consulting · Ciudad de México</p>
+</footer>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.course-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.course-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+</script>
+
+</body>
+</html>
